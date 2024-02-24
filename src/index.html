@@ -2,23 +2,22 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vanilla App Template</title>
+    <title>homepage</title>
     <link rel="stylesheet" href="./css/styles.css" />
   </head>
   <body>
-    <load ="partials/header.html" />
+    <div class="search-the-pic">
+      <input
+        type="text"
+        id="name-input"
+        class="input-picstyle"
+        placeholder="Find the picture"
+      />
 
-    <section>
-      <h1>Example page title</h1>
-      <!-- Path to images as from index.html file -->
-      <img src="./img/javascript.svg" alt="" />
-    </section>
-
-    <!-- Loads the specified .html file -->
-    <load ="partials/vite-promo.html" />
-
+      <button type="button" class="search-btn">Search</button>
+    </div>
+    <section class="gallery"></section>
     <script type="module" src="./main.js"></script>
   </body>
 </html>
