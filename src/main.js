@@ -12,7 +12,7 @@ const searchButton = document.querySelector('.search-btn');
 const gallery = document.querySelector('.gallery');
 
 searchButton.addEventListener('click', () => {
-  const query = inputSearch.value.split(' ').join('+');
+  const query = inputSearch.value.trim().split(' ').join('+');
 
   gallery.innerHTML = '<span class="loader"></span>';
   fetchImages(query)
@@ -37,5 +37,10 @@ searchButton.addEventListener('click', () => {
     })
     .catch(error => {
       alert('Error while fetching images');
+    })
+    .finally(() => {
+      inputSearch.value = '';
+      let lastQuery = query.split('+').join(' ');
+      inputSearch.placeholder = `Last searched for "${lastQuery}"`;
     });
 });

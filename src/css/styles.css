@@ -30,9 +30,7 @@
   flex-wrap: wrap;
   justify-content: center;
 }
-img {
-  width: 360px;
-}
+
 .search-the-pic {
   text-align: center;
   margin: 20px;
@@ -101,7 +99,9 @@ img {
   border-color: #808080;
 }
 .pic-card img {
-  max-height: 200px;
+  height: 200px;
+  object-fit: fill;
+  width: 360px;
 }
 .gallery-link {
   margin-bottom: 10px;
