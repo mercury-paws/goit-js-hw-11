@@ -13,7 +13,16 @@ const gallery = document.querySelector('.gallery');
 
 searchButton.addEventListener('click', () => {
   const query = inputSearch.value.trim().split(' ').join('+');
-
+  if (!query) {
+    iziToast.error({
+      color: 'red',
+      message: 'Please fill in the querry, what are you looking for?',
+      position: 'center',
+      progressBarColor: 'rgb(0, 255, 184)',
+      timeout: 2000,
+    });
+    return;
+  }
   gallery.innerHTML = '<span class="loader"></span>';
   fetchImages(query)
     .then(data => {
