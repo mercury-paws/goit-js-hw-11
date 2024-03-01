@@ -38,14 +38,20 @@ searchButton.addEventListener('click', () => {
         });
       }
       displayImages(images);
-      let galleryBox = new SimpleLightbox('.pic-card a', {
+      let lightboxInstance = new SimpleLightbox('.pic-card a', {
         captionsData: 'alt',
         captionDelay: 250,
       });
-      galleryBox.refresh();
+      lightboxInstance.refresh();
     })
     .catch(error => {
-      alert('Error while fetching images');
+      iziToast.error({
+        color: 'red',
+        message: 'Error while fetching images',
+        position: 'center',
+        progressBarColor: 'rgb(0, 255, 184)',
+        timeout: 2000,
+      });
     })
     .finally(() => {
       inputSearch.value = '';
